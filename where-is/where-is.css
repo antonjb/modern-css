@@ -22,3 +22,11 @@
 .is-button {
   background-color: blue;
 }
+
+:is(.also-specific, button.is-button:hover) {
+  background-color: pink;
+}
+
+.is-button.specific {
+  background-color: green;
+}
