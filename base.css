@@ -33,4 +33,8 @@
     aspect-ratio: 16/9;
     object-fit: cover;
   }
+
+  .special {
+    background-color: purple;
+  }
 }
