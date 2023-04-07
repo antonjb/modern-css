@@ -1,4 +1,4 @@
-@layer reset, setup, demo;
+@layer reset, theme, setup, demo;
 
 @layer demo {
   main {
@@ -26,18 +26,5 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0 2rem;
-  }
-
-  .card {
-    padding: 1rem;
-    border: 1px solid pink;
-    border-radius: 1rem;
-  }
-
-  img {
-    inline-size: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    object-fit: cover;
   }
 }

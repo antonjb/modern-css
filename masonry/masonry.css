@@ -1,0 +1,19 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  main {
+    grid-template-rows: masonry;
+  }
+}
+
+@layer setup {
+  body {
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+}

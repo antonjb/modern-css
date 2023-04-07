@@ -19,3 +19,18 @@
     margin: 0;
   }
 }
+
+@layer theme {
+  .card {
+    padding: 1rem;
+    border: 1px solid pink;
+    border-radius: 1rem;
+  }
+
+  .card img {
+    inline-size: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}
