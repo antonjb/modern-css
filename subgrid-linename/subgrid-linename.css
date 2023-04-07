@@ -1,4 +1,4 @@
-@layer reset, setup, demo;
+@layer reset, theme, setup, demo;
 
 @layer demo {
   body {
