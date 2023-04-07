@@ -1,0 +1,29 @@
+@layer reset, setup, demo;
+
+@layer demo {
+  body {
+    grid-template-columns:
+      [full-width-start] 1fr [container-start] minmax(0, 2fr)
+      [container-end] 1fr [full-width-end];
+  }
+
+  main {
+    grid-template-columns: subgrid;
+  }
+
+  div {
+    grid-column: container;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-column: full-width;
+  }
+}
