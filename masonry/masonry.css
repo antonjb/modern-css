@@ -9,6 +9,11 @@
     grid-column: 2 / 4;
     grid-row: 1;
   }
+
+  .masonry-column {
+    grid-template-columns: masonry;
+    grid-template-rows: repeat(4, 300px);
+  }
 }
 
 @layer setup {
@@ -20,5 +25,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
+  }
+
+  .masonry-column .card img {
+    inline-size: 100px;
+    block-size: 100px;
   }
 }
