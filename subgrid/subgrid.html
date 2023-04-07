@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Subgrid</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="subgrid.css" />
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://images.unsplash.com/photo-1504674138570-5fe6671ec5ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgyNTc&ixlib=rb-4.0.3&q=80&w=400"
+            alt=""
+          />
+          <h2>Card title</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            incidunt rerum eum, voluptatibus laborum itaque inventore nihil
+            ipsam modi quisquam facilis quos reiciendis suscipit earum. Dolorem
+            quibusdam illo quas eius?
+          </p>
+        </div>
+        <div class="card-footer">
+          <button>Testing</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://images.unsplash.com/photo-1527904324834-3bda86da6771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgzOTA&ixlib=rb-4.0.3&q=80&w=400"
+            alt=""
+          />
+          <h2>Card title</h2>
+        </div>
+        <div id="interactiveCard" class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            incidunt rerum eum, voluptatibus laborum itaque inventore nihil
+            ipsam modi quisquam facilis quos reiciendis suscipit earum. Dolorem
+            quibusdam illo quas eius?
+          </p>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
+            dicta aut, suscipit cum culpa molestias odio aliquid vero sunt?
+            Quidem incidunt optio aut harum natus molestias maxime? Consectetur,
+            incidunt praesentium.
+          </p>
+        </div>
+        <div class="card-footer">
+          <button onclick="handleClick()">Sign up</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://images.unsplash.com/photo-1531212906032-c2e417eaa51a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgyNTc&ixlib=rb-4.0.3&q=80&w=400"
+            alt=""
+          />
+          <h2 id="increasedHeader">Product Card</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            incidunt rerum eum, voluptatibus laborum itaque inventore nihil
+            ipsam modi quisquam facilis quos reiciendis suscipit earum. Dolorem
+            quibusdam illo quas eius?
+          </p>
+        </div>
+        <div class="card-footer">
+          <button>Sign up</button>
+          <button onclick="handleLearnMoreClick()">Learn more</button>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const text = [
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        "Dolorem quibusdam illo quas eius?",
+        "Repudiandae incidunt rerum eum, voluptatibus laborum itaque inventore nihil ipsam modi quisquam facilis quos reiciendis suscipit earum.",
+      ];
+      const $cardBody = document.querySelector("#interactiveCard");
+
+      function handleClick() {
+        $cardBody.insertAdjacentHTML(
+          "beforeend",
+          `<p>${text[Math.floor(Math.random() * text.length)]}</p>`
+        );
+      }
+
+      function handleLearnMoreClick() {
+        console.log("hello");
+        const $increasedHeader = document.querySelector("#increasedHeader");
+        $increasedHeader.textContent =
+          "Product Card that has a longer title than the others";
+      }
+    </script>
+  </body>
+</html>

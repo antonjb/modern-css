@@ -1,0 +1,43 @@
+@layer reset, setup, demo;
+
+@layer demo {
+  main {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .card {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
+    gap: 2rem;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+    block-size: 100vh;
+  }
+
+  main {
+    inline-size: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border: 1px solid pink;
+    border-radius: 1rem;
+  }
+
+  img {
+    inline-size: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}
