@@ -37,4 +37,14 @@
   .special {
     background-color: purple;
   }
+
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: purple;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }
