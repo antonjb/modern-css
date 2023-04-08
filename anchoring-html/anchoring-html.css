@@ -1,0 +1,31 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .tooltip {
+    bottom: calc(anchor(top) + 1rem);
+    left: anchor(center);
+  }
+}
+
+@layer setup {
+  body {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    transform: translateX(-50%);
+  }
+
+  body:has(.button:hover, .button:focus-visible) .tooltip {
+    display: block;
+  }
+}
