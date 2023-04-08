@@ -1,0 +1,55 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .anchor {
+    anchor-name: --tooltip-anchor;
+  }
+
+  .tooltip {
+    anchor-default: --tooltip-anchor;
+    position-fallback: --tooltop-position;
+    anchor-scroll: --tooltip-anchor;
+    left: anchor(auto);
+  }
+
+  @position-fallback --tooltop-position {
+    @try {
+      bottom: anchor(top);
+      left: anchor(center);
+    }
+    @try {
+      top: anchor(bottom);
+      left: anchor(right);
+    }
+  }
+}
+
+@layer setup {
+  body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  main {
+    margin: auto;
+    inline-size: 400px;
+    overflow: auto;
+  }
+
+  .tooltip {
+    display: none;
+    position: absolute;
+    padding: 1rem;
+    background-color: #eee;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    transform: translateX(-50%);
+  }
+
+  body:has(.button:hover, .button:focus-visible) .tooltip {
+    display: block;
+  }
+}
