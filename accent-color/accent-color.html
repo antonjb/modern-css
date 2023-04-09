@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Accent Color</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="accent-color.css" />
+  </head>
+  <body>
+    <main>
+      <div class="input-group">
+        <div>
+          <input type="checkbox" />
+          <input type="checkbox" disabled />
+          <input type="checkbox" checked />
+          <input type="checkbox" checked disbaled />
+          <input id="indeterminate" type="checkbox" />
+          <input id="indeterminate-disabled" type="checkbox" disabled />
+        </div>
+        <div>
+          <input type="radio" />
+          <input type="radio" disabled />
+          <input type="radio" checked />
+          <input type="radio" checked disabled />
+        </div>
+        <input type="range" />
+        <input type="range" disabled />
+        <progress value="50" max="100" />
+      </div>
+
+      <div class="input-group dark">
+        <div>
+          <input type="checkbox" />
+          <input type="checkbox" disabled />
+          <input type="checkbox" checked />
+          <input type="checkbox" checked disbaled />
+          <input id="indeterminate" type="checkbox" />
+          <input id="indeterminate-disabled" type="checkbox" disabled />
+        </div>
+        <div>
+          <input type="radio" />
+          <input type="radio" disabled />
+          <input type="radio" checked />
+          <input type="radio" checked disabled />
+        </div>
+        <input type="range" />
+        <input type="range" disabled />
+        <progress value="50" max="100" />
+      </div>
+    </main>
+
+    <script>
+      const indeterminate = document.getElementById("indeterminate");
+      const indeterminateDisabled = document.getElementById(
+        "indeterminate-disabled"
+      );
+
+      indeterminate.indeterminate = true;
+      indeterminateDisabled.indeterminate = true;
+    </script>
+  </body>
+</html>

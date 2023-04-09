@@ -1,0 +1,33 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  body {
+    accent-color: pink;
+  }
+
+  .dark {
+    accent-color: black;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+    block-size: 100vh;
+  }
+
+  main {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    inline-size: 40%;
+    max-inline-size: 400px;
+    gap: 1rem;
+    align-items: center;
+  }
+}
