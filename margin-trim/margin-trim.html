@@ -1,0 +1,133 @@
+<!-- basic html page structure -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Margin trim</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="margin-trim.css" />
+  </head>
+  <body>
+    <main>
+      <div class="block">
+        <div class="container">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+        </div>
+        <form class="controls">
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-none"
+              value="none"
+              checked
+            />
+            None
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-block"
+              value="block"
+            />
+            Block
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-block-start"
+              value="block-start"
+            />
+            Block start
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-block-end"
+              value="block-end"
+            />
+            Block end
+          </label>
+        </form>
+      </div>
+
+      <!-- inline -->
+      <div class="inline">
+        <div class="container">
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+        </div>
+        <form class="controls">
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-none"
+              value="none"
+              checked
+            />
+            None
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-inline"
+              value="inline"
+            />
+            Inline
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-inline-start"
+              value="inline-start"
+            />
+            Inline start
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="margin-trim"
+              id="margin-trim-inline-end"
+              value="inline-end"
+            />
+            Inline end
+          </label>
+        </form>
+      </div>
+    </main>
+    <script>
+      const $blockControls = document.querySelector(".block .controls");
+      const $inlineControls = document.querySelector(".inline .controls");
+      const $blockContainer = document.querySelector(".block .container");
+      const $inlineContainer = document.querySelector(".inline .container");
+
+      $blockControls.addEventListener("change", (evt) => {
+        setMarginTrim(evt.target.value, $blockContainer);
+      });
+
+      $inlineControls.addEventListener("change", (evt) => {
+        setMarginTrim(evt.target.value, $inlineContainer);
+      });
+
+      function setMarginTrim(value, $target) {
+        $target.style.setProperty("--margin-trim", value);
+
+        // need to force Webkit to repaint otherwise we don't see a change
+        $target.style.transform = `translateZ(0)`;
+
+        setTimeout(() => {
+          $target.style.removeProperty("transform");
+        }, 0);
+      }
+    </script>
+  </body>
+</html>

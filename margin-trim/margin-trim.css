@@ -1,0 +1,46 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .container {
+    margin-trim: var(--margin-trim, none);
+  }
+
+  .item {
+    margin: 1rem;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+    block-size: 100vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    inline-size: 40%;
+    max-inline-size: 400px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid orangered;
+  }
+
+  .item {
+    padding: 1rem;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    color: #fff;
+    text-align: center;
+    flex: 1;
+  }
+
+  .inline .container {
+    flex-direction: row;
+  }
+}
