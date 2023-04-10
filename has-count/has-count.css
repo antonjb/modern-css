@@ -1,0 +1,24 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  main:has(:nth-last-child(5):first-child ~ .card) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main:has(:nth-last-child(5):first-child ~ .card) .card:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}

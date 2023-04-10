@@ -34,11 +34,22 @@
     object-fit: cover;
   }
 
+  .card-footer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .card-footer > * {
+    flex: 1;
+  }
+
   .special {
     background-color: purple;
   }
 
   .button {
+    display: flex;
+    justify-content: center;
     padding: 0.5rem 1rem;
     background-color: purple;
     border-radius: 4px;
@@ -46,5 +57,10 @@
     border: none;
     font-size: 2rem;
     cursor: pointer;
+  }
+
+  .button.secondary {
+    background-color: #eee;
+    color: black;
   }
 }

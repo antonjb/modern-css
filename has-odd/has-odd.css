@@ -1,0 +1,20 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  main:has(.card:last-of-type:nth-of-type(odd)) .card:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}

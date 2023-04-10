@@ -1,0 +1,28 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .card:not(:has(img)) h2 {
+    padding: 2rem;
+    color: red;
+    font-size: 2.4rem;
+    border-inline-start: 10px solid currentcolor;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+  }
+
+  .card-footer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .card-footer > * {
+    flex: 1;
+  }
+}

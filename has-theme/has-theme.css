@@ -1,0 +1,24 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  body:has(.purple:checked) {
+    outline: 10px solid purple;
+  }
+
+  body:has(.orange:checked) {
+    outline: 10px solid orange;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}

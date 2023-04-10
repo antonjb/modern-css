@@ -1,0 +1,47 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .card:has(img) .card-header {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .card:has(img) .card-header > * {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  .card:has(img) h2 {
+    color: red;
+    background-color: rgba(102, 51, 153, 0.5);
+    align-self: end;
+    padding: 1rem;
+  }
+
+  .button:has(svg) {
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card:has(img):has(.card-body) p {
+    outline: 4px solid red;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+  }
+
+  .card-footer {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .card-footer > * {
+    flex: 1;
+  }
+}
