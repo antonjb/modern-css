@@ -1,0 +1,23 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .srgb {
+    background: linear-gradient(to right, #ff0000 0%, #0000ff 100%);
+  }
+
+  .lch {
+    background: linear-gradient(in lch to right, #ff0000, #0000ff);
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  .gradient {
+    inline-size: 40vw;
+    block-size: 20vh;
+  }
+}
