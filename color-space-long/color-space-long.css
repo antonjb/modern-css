@@ -1,0 +1,35 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .regular {
+    background: linear-gradient(to right, hsl(0, 90%, 51%), hsl(101, 92%, 50%));
+  }
+
+  .long {
+    background: linear-gradient(
+      to right in hsl longer hue,
+      hsl(0, 100%, 50%),
+      hsl(101, 92%, 50%)
+    );
+  }
+
+  .shorter {
+    background: linear-gradient(
+      to right in hsl shorter hue,
+      hsl(0, 100%, 50%),
+      hsl(101, 92%, 50%)
+    );
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  .gradient {
+    inline-size: 40vw;
+    block-size: 20vh;
+  }
+}
