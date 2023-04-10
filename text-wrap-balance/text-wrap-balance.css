@@ -1,0 +1,22 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .balanced {
+    text-wrap: balance;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    max-inline-size: 80vw;
+    display: flex;
+    gap: 1rem;
+    resize: horizontal;
+    overflow: hidden;
+  }
+}
