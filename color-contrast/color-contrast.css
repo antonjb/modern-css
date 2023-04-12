@@ -1,0 +1,32 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .color-a {
+    background-color: var(--color);
+    color: color-contrast(var(--color) vs var(--color-a), var(--color-b));
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    gap: 1rem;
+  }
+
+  .color-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: sans-serif;
+  }
+}
