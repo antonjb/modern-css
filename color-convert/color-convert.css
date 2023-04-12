@@ -1,0 +1,37 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .color-b {
+    background-color: hsl(from var(--color1) h s l);
+  }
+
+  .color-c {
+    background-color: hsl(from var(--color1) h s l / 0.5);
+  }
+
+  .color-d {
+    background-color: hsl(from var(--color1) calc(h * 10) s l / 0.5);
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(2, 200px);
+    gap: 1rem;
+  }
+
+  [class^="color"] {
+    --color1: #8000a7;
+  }
+
+  .color-a {
+    background-color: var(--color1);
+  }
+}
