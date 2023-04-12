@@ -1,0 +1,46 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .color-mix {
+    background-color: color-mix(
+      in srgb,
+      var(--color1) var(--color-a-percent, 50%),
+      var(--color2) var(--color-b-percent, 50%)
+    );
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(3, 200px);
+    gap: 1rem;
+  }
+
+  [class^="color"] {
+    --color1: red;
+    --color2: blue;
+  }
+
+  .color-a {
+    background-color: var(--color1);
+  }
+
+  .color-b {
+    background-color: var(--color2);
+  }
+
+  .controls {
+    grid-column: 1 / -1;
+  }
+
+  .controls input {
+    inline-size: 100%;
+  }
+}

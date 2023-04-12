@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Color mix</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="color-mix.css" />
+  </head>
+  <body>
+    <main>
+      <div class="color-a"></div>
+      <div class="color-mix"></div>
+      <div class="color-b"></div>
+      <div class="controls">
+        <input type="range" step="1" max="100" min="0" />
+      </div>
+    </main>
+
+    <script>
+      const $input = document.querySelector("input");
+
+      $input.addEventListener("input", update);
+
+      function update(evt) {
+        const value = evt.target.value;
+        const colorAPercent = value;
+        const colorBPercent = 100 - value;
+
+        document.documentElement.style.setProperty(
+          "--color-a-percent",
+          `${colorAPercent}%`
+        );
+
+        document.documentElement.style.setProperty(
+          "--color-b-percent",
+          `${colorBPercent}%`
+        );
+      }
+    </script>
+  </body>
+</html>
