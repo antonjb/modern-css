@@ -1,0 +1,44 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .progress {
+    animation-name: progress;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timeline: scroll(block root);
+  }
+}
+
+@layer setup {
+  body {
+    background: rgb(128 0 128)
+      linear-gradient(to bottom, blue, rgba(128 0 128 / 0)) no-repeat;
+    background-size: 100%;
+    block-size: unset;
+    block-size: 200vh;
+  }
+
+  .spacer {
+    display: block;
+    block-size: 300vh;
+    inline-size: 100vw;
+  }
+
+  .progress {
+    position: sticky;
+    inline-size: 100%;
+    block-size: 40px;
+    background-color: orangered;
+    top: 0;
+    left: 0;
+  }
+
+  @keyframes progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}

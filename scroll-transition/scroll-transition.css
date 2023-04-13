@@ -1,0 +1,49 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .square {
+    animation-name: spinny;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timeline: scroll(block nearest);
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    position: relative;
+    block-size: 400px;
+    inline-size: 400px;
+    overflow: scroll;
+    outline: 1px solid orangered;
+  }
+
+  main::after {
+    display: block;
+    content: "";
+    block-size: 300%;
+    inline-size: 40px;
+  }
+
+  .square {
+    position: sticky;
+    inline-size: 80px;
+    block-size: 80px;
+    background-color: orangered;
+    inset: 50%;
+  }
+
+  @keyframes spinny {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
