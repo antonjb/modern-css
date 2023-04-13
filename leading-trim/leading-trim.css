@@ -1,0 +1,30 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  a {
+    leading-trim: var(--leading-trim, both);
+    text-edge: var(--text-edge, cap) alphabetic;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .button {
+    display: block;
+    padding: 0;
+  }
+
+  .highlighter {
+    background-color: blue;
+    padding: 1rem;
+  }
+}

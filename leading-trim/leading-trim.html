@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leading Trim</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="leading-trim.css" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <div class="highlighter">
+          <a href="#" class="button">Leading trim wow!</a>
+        </div>
+
+        <select id="leading-trim">
+          <option value="normal">normal</option>
+          <option value="start">start</option>
+          <option value="end">end</option>
+          <option value="both" selected>both</option>
+        </select>
+
+        <select id="text-edge">
+          <option value="leading">leading</option>
+          <option value="text">text</option>
+          <option value="cap" selected>cap</option>
+          <option value="ex">ex</option>
+          <option value="ideographic">ideographic</option>
+          <option value="ideographic-ink">ideographic-ink</option>
+          <option value="ideographic-ink">ideographic-ink</option>
+        </select>
+      </div>
+    </main>
+
+    <script>
+      const $leadingTrim = document.getElementById("leading-trim");
+      const $textEdge = document.getElementById("text-edge");
+      const $target = document.querySelector(".button");
+
+      $leadingTrim.addEventListener("change", () => {
+        document.body.style.setProperty("--leading-trim", $leadingTrim.value);
+        forceRepaint();
+      });
+
+      $textEdge.addEventListener("change", () => {
+        document.body.style.setProperty("--text-edge", $textEdge.value);
+        forceRepaint();
+      });
+
+      function forceRepaint() {
+        // need to force Webkit to repaint otherwise we don't see a change
+        $target.style.transform = `translateZ(0)`;
+
+        setTimeout(() => {
+          $target.style.removeProperty("transform");
+        }, 0);
+      }
+    </script>
+  </body>
+</html>
