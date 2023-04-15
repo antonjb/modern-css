@@ -1,0 +1,95 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .menu li {
+    --radius: 50px;
+    transform: translate(
+      calc(cos(var(--deg, 0deg)) * var(--radius)),
+      calc(sin(var(--deg, 0deg)) * var(--radius))
+    );
+    transition: all 0.2s var(--delay) linear;
+  }
+
+  .menu:not(:hover) li {
+    outline: 4px solid red;
+    --radius: 0;
+    --deg: 0;
+  }
+
+  .menu li:nth-child(1) {
+    --deg: 0deg;
+    --delay: 0.01s;
+  }
+
+  .menu li:nth-child(2) {
+    --deg: 45deg;
+    --delay: 0.03s;
+  }
+
+  .menu li:nth-child(3) {
+    --deg: 90deg;
+    --delay: 0.05s;
+  }
+
+  .menu li:nth-child(4) {
+    --deg: 135deg;
+    --delay: 0.07s;
+  }
+
+  .menu li:nth-child(5) {
+    --deg: 180deg;
+    --delay: 0.09s;
+  }
+
+  .menu li:nth-child(6) {
+    --deg: 225deg;
+    --delay: 0.11s;
+  }
+
+  .menu li:nth-child(7) {
+    --deg: 270deg;
+    --delay: 0.13s;
+  }
+
+  .menu li:nth-child(8) {
+    --deg: 315deg;
+    --delay: 0.15s;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+  }
+
+  .menu {
+    position: relative;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  button {
+    position: relative;
+    inline-size: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: orangered;
+    border: none;
+    z-index: 10;
+  }
+
+  .menu li {
+    --size: 25px;
+    position: absolute;
+    inline-size: var(--size);
+    aspect-ratio: 1;
+    background-color: purple;
+    border-radius: 50%;
+    inset: calc(var(--size) / 2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
