@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Container Style Queries</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="container-style-queries.css" />
+  </head>
+  <body>
+    <main>
+      <h2>--promo value <span></span></h2>
+      <div class="containment">
+        <div class="card">
+          <div class="card-header">
+            <img
+              src="https://images.unsplash.com/photo-1504674138570-5fe6671ec5ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgyNTc&ixlib=rb-4.0.3&q=80&w=400"
+              alt=""
+            />
+          </div>
+          <div class="card-body">
+            <h2>Card title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae incidunt rerum eum, voluptatibus laborum itaque
+              inventore nihil ipsam modi quisquam facilis quos reiciendis
+              suscipit earum. Dolorem quibusdam illo quas eius?
+            </p>
+          </div>
+          <div class="card-footer">
+            <button class="button">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="24" height="24" fill="black" />
+              </svg>
+              <div>Order <span>the sprinkle pack</span></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <aside>
+      <div class="containment">
+        <div class="card">
+          <div class="card-header">
+            <img
+              src="https://images.unsplash.com/photo-1504674138570-5fe6671ec5ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgyNTc&ixlib=rb-4.0.3&q=80&w=400"
+              alt=""
+            />
+            <h2>Card title</h2>
+          </div>
+          <div class="card-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repudiandae incidunt rerum eum, voluptatibus laborum itaque
+              inventore nihil ipsam modi quisquam facilis quos reiciendis
+              suscipit earum. Dolorem quibusdam illo quas eius?
+            </p>
+          </div>
+          <div class="card-footer">
+            <button class="button">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="24" height="24" fill="black" />
+              </svg>
+              <div>Order <span>the sprinkle pack</span></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script>
+      const promoValue = document.querySelector("h2 span");
+      const containment = document.querySelector("main .containment");
+      const button = document.querySelector("main button");
+      let promo = 0;
+
+      button.addEventListener("click", () => {
+        promo = promo === 0 ? 1 : 0;
+        containment.style.setProperty("--promo", promo);
+        updatePromoValue();
+      });
+
+      function updatePromoValue() {
+        const value = getComputedStyle(containment).getPropertyValue("--promo");
+        promoValue.textContent = value;
+      }
+
+      updatePromoValue();
+    </script>
+  </body>
+</html>
