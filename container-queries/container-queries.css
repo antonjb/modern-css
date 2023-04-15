@@ -1,0 +1,94 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .containment {
+    container: cardContainer / inline-size;
+    inline-size: 100%;
+  }
+
+  .card-footer {
+    container: cardFooter / inline-size;
+    inline-size: 100%;
+  }
+
+  @container cardContainer (min-width: 400px) {
+    .card {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card img {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  @container cardFooter (max-width: 600px) {
+    .button {
+      flex: unset;
+      inline-size: 80cqi;
+    }
+
+    .button svg,
+    .button span {
+      display: none;
+    }
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr [content-start] 2fr [content-end sidebar-start] 1fr [sidebar-end] 2fr;
+    grid-template-rows: 1fr 40vh 1fr;
+    block-size: 100vh;
+    overflow: scroll;
+    gap: 2rem;
+  }
+
+  body > * {
+    grid-row: 2;
+    block-size: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    grid-column: content;
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 0;
+    outline: 1px solid orangered;
+  }
+
+  aside {
+    grid-column: sidebar;
+    inline-size: 100%;
+    outline: 1px solid purple;
+  }
+
+  .containment {
+    overflow: hidden;
+    resize: horizontal;
+  }
+
+  .card {
+    inline-size: 100%;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .card-footer {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .card img {
+    aspect-ratio: 1;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}

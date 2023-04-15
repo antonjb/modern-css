@@ -1,0 +1,65 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  main {
+    scroll-timeline-name: mainTimeline;
+  }
+
+  aside div {
+    animation-name: progressanimation;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-timeline: mainTimeline;
+  }
+}
+
+@layer setup {
+  body {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 2fr [content-start] 2fr [content-end sidebar-start] 1fr [sidebar-end] 2fr;
+    grid-template-rows: 1fr 40vh 1fr;
+    block-size: 100vh;
+    overflow: scroll;
+    gap: 2rem;
+  }
+
+  body > * {
+    grid-row: 2;
+  }
+
+  p {
+    line-height: 2;
+    font-size: 2rem;
+  }
+
+  main {
+    grid-column: content;
+    overflow: scroll;
+    height: 100%;
+    min-height: 0;
+  }
+
+  aside {
+    grid-column: sidebar;
+    inline-size: 100%;
+    block-size: 80px;
+    border: 1px solid purple;
+  }
+
+  aside div {
+    block-size: 80px;
+    inline-size: 100%;
+    transform-origin: top left;
+    background-color: purple;
+  }
+
+  @keyframes progressanimation {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
