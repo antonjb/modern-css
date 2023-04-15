@@ -1,0 +1,30 @@
+nav {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [main-start] 120ch [main-end] 1fr [full-end];
+  grid-column: full;
+  background-color: purple;
+}
+
+nav .inner {
+  grid-column: main;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  margin-inline-start: auto;
+  list-style: none;
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  color: #fff;
+}

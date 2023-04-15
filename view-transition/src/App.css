@@ -1,0 +1,20 @@
+.App {
+  display: grid;
+  grid-template-columns: [full-start] 1fr [main-start] 120ch [main-end] 1fr [full-end];
+  block-size: 100%;
+}
+
+main {
+  grid-column: main;
+}
+
+button {
+  cursor: pointer;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+}
