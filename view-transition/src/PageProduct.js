@@ -4,6 +4,7 @@ export function PageProduct() {
       <img
         src="https://images.unsplash.com/photo-1527904324834-3bda86da6771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgzOTA&ixlib=rb-4.0.3&q=80&w=400"
         alt=""
+        className="product-image"
       />
       <h1>Product 1</h1>
       <div>

@@ -2,7 +2,7 @@ export function Card({ imageUrl, title, children, onClick }) {
   return (
     <div class="card">
       <div class="card-header">
-        <img src={imageUrl} alt="" />
+        <img className="card-image" src={imageUrl} alt="" />
         <h2>{title}</h2>
       </div>
       <div class="card-body">{children}</div>

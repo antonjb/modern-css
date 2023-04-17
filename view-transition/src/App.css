@@ -2,10 +2,13 @@
   display: grid;
   grid-template-columns: [full-start] 1fr [main-start] 120ch [main-end] 1fr [full-end];
   block-size: 100%;
+  contain: layout;
 }
 
 main {
   grid-column: main;
+  contain: layout;
+  view-transition-name: main;
 }
 
 button {
@@ -17,4 +20,129 @@ button {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
   padding: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  margin: 0;
+  padding: 1rem 0;
+  list-style: none;
+  view-transition-name: breadcrumb;
+  grid-column: main;
+  gap: 1rem;
+  /* inline-size: fit-content; */
+  contain: layout;
+}
+
+.breadcrumb-home {
+  view-transition-name: breadcrumb-home;
+  inline-size: fit-content;
+  contain: layout;
+}
+
+.product-image {
+  view-transition-name: product-image;
+  contain: layout;
+}
+
+.doughnutdothis {
+  position: fixed;
+  inline-size: 50%;
+  block-size: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: purple;
+  contain: paint;
+  z-index: 100;
+  view-transition-name: doughnutdothis;
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-from-bottom {
+  from {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes slide-to-bottom {
+  to {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes outty {
+  to {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes inny {
+  from {
+    transform: scale(0.8);
+  }
+}
+
+@keyframes spinneroony {
+  from {
+    scale: 0;
+  }
+  to {
+    transform: rotate(8turn);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+}
+
+::view-transition-new(breadcrumb) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both slide-from-right;
+}
+
+::view-transition-old(main) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-bottom;
+}
+
+::view-transition-new(main) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-bottom;
+}
+
+::view-transition-new(product-image):only-child {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-in,
+    90ms cubic-bezier(0.4, 0, 1, 1) both inny;
+}
+
+::view-transition-old(product-image):only-child {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    90ms cubic-bezier(0.4, 0, 1, 1) both outty;
+}
+
+::view-transition-image-pair(doughnutdothis) {
+  animation: 100ms ease-in-out both spinneroony;
 }
