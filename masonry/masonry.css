@@ -12,15 +12,11 @@
 
   .masonry-column {
     grid-template-columns: masonry;
-    grid-template-rows: repeat(4, 300px);
+    grid-template-rows: repeat(3, 200px);
   }
 }
 
 @layer setup {
-  body {
-    place-items: center;
-  }
-
   main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -30,5 +26,12 @@
   .masonry-column .card img {
     inline-size: 100px;
     block-size: 100px;
+  }
+
+  .special {
+    background: var(--gradient-purple-pink);
+    --card-header-color: var(--brand-light);
+    --card-body-color: var(--brand-light);
+    --card-primary-color: transparent;
   }
 }

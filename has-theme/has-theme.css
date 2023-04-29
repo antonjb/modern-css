@@ -1,19 +1,23 @@
 @layer reset, theme, setup, demo;
 
 @layer demo {
-  body:has(.purple:checked) {
-    outline: 10px solid purple;
+  body:has(input[value="dark"]:checked) {
+    --body-background: var(--brand-dark);
+    --card-header-color: var(--brand-light);
+    --card-body-color: rgb(255 255 255 / 0.8);
+    --card-primary-color: var(--brand-yellow);
+    --button-background: var(--gradient-yellow-pink-shorter);
+    --body-color: var(--brand-light);
   }
 
-  body:has(.orange:checked) {
-    outline: 10px solid orange;
+  body:has(input[value="light"]:checked) {
+    --body-background: var(--brand-light);
   }
 }
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
+    grid-template-rows: 200px auto;
   }
 
   main {

@@ -3,18 +3,18 @@
 @layer demo {
   .card {
     padding: 1rem;
-    border: 1px solid pink;
+    border: 1px solid var(--brand-purple);
     border-radius: 1rem;
 
     & h2 {
-      color: green;
+      color: var(--brand-purple);
     }
 
     & img {
       inline-size: 100%;
       height: auto;
       aspect-ratio: 16/9;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     &.special {
@@ -24,8 +24,11 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
+  .grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    grid-column: 2;
   }
 }

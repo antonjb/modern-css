@@ -15,10 +15,8 @@
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
-    grid-template-columns: 2fr [content-start] 2fr [content-end sidebar-start] 1fr [sidebar-end] 2fr;
-    grid-template-rows: 1fr 40vh 1fr;
+    grid-template-columns: 1fr [content-start] 2fr [content-end sidebar-start] 1fr [sidebar-end] 1fr;
+    grid-template-rows: 1fr 50vh 1fr;
     block-size: 100vh;
     overflow: scroll;
     gap: 2rem;
@@ -30,7 +28,8 @@
 
   p {
     line-height: 2;
-    font-size: 2rem;
+    font-size: 1.4rem;
+    color: var(--brand-dark);
   }
 
   main {
@@ -44,14 +43,14 @@
     grid-column: sidebar;
     inline-size: 100%;
     block-size: 80px;
-    border: 1px solid purple;
+    border: 4px solid var(--brand-dark);
   }
 
   aside div {
-    block-size: 80px;
+    block-size: 72px;
     inline-size: 100%;
     transform-origin: top left;
-    background-color: purple;
+    background: var(--gradient-purple-pink-shorter);
   }
 
   @keyframes progressanimation {

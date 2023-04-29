@@ -2,7 +2,7 @@
 
 @layer demo {
   .menu li {
-    --radius: 50px;
+    --radius: 200px;
     transform: translate(
       calc(cos(var(--deg, 0deg)) * var(--radius)),
       calc(sin(var(--deg, 0deg)) * var(--radius))
@@ -11,7 +11,6 @@
   }
 
   .menu:not(:hover) li {
-    outline: 4px solid red;
     --radius: 0;
     --deg: 0;
   }
@@ -58,38 +57,47 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   .menu {
     position: relative;
-
     padding: 0;
     margin: 0;
   }
 
   button {
     position: relative;
-    inline-size: 50px;
+    inline-size: 200px;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: orangered;
+    background: var(--gradient-purple-pink-shorter);
     border: none;
     z-index: 10;
   }
 
+  button img {
+    inline-size: 60%;
+    block-size: 60%;
+    object-fit: contain;
+  }
+
   .menu li {
-    --size: 25px;
+    --size: 100px;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     inline-size: var(--size);
     aspect-ratio: 1;
-    background-color: purple;
+    padding: 0;
+    margin: 0;
+    background-color: var(--brand-yellow);
     border-radius: 50%;
     inset: calc(var(--size) / 2);
     list-style: none;
-    padding: 0;
-    margin: 0;
+  }
+
+  .menu li img {
+    inline-size: 60%;
+    block-size: 60%;
+    object-fit: contain;
   }
 }

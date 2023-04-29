@@ -6,9 +6,9 @@
   }
 
   .tooltip {
-    bottom: calc(anchor(--tooltip-anchor top) + 1rem);
-    left: anchor(--tooltip-anchor center);
     inline-size: calc(anchor-size(--tooltip-anchor width) * 2);
+    inset-block-end: calc(anchor(--tooltip-anchor top) + 1rem);
+    inset-inline-start: anchor(--tooltip-anchor center);
   }
 }
 
@@ -19,18 +19,22 @@
   }
 
   .tooltip {
-    display: none;
     position: absolute;
     padding: 1rem;
-    background-color: #eee;
+    background-color: var(--brand-dark);
     border-radius: 4px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
     font-size: 1.5rem;
     transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s linear;
     text-align: center;
   }
 
   body:has(.button:hover, .button:focus-visible) .tooltip {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }

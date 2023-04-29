@@ -11,24 +11,27 @@
 
 @layer setup {
   body {
-    background: rgb(128 0 128)
-      linear-gradient(to bottom, blue, rgba(128 0 128 / 0)) no-repeat;
-    background-size: 100%;
-    block-size: unset;
-    block-size: 200vh;
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    height: unset;
   }
 
-  .spacer {
-    display: block;
-    block-size: 300vh;
-    inline-size: 100vw;
+  main {
+    inline-size: 40vw;
+    margin-inline: auto;
+    padding-block: 2rem;
+  }
+
+  img {
+    margin-block: 1rem;
   }
 
   .progress {
     position: sticky;
     inline-size: 100%;
     block-size: 40px;
-    background-color: orangered;
+    background: var(--gradient-purple-pink-shorter);
     top: 0;
     left: 0;
   }

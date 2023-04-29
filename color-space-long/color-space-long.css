@@ -2,30 +2,35 @@
 
 @layer demo {
   .regular {
-    background: linear-gradient(to right, hsl(0, 90%, 51%), hsl(101, 92%, 50%));
+    background: linear-gradient(
+      to right,
+      var(--brand-purple),
+      var(--brand-yellow)
+    );
   }
 
   .long {
     background: linear-gradient(
       to right in hsl longer hue,
-      hsl(0, 100%, 50%),
-      hsl(101, 92%, 50%)
+      var(--brand-purple),
+      var(--brand-yellow)
     );
   }
 
   .shorter {
     background: linear-gradient(
       to right in hsl shorter hue,
-      hsl(0, 100%, 50%),
-      hsl(101, 92%, 50%)
+      var(--brand-purple),
+      var(--brand-yellow)
     );
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .gradient {

@@ -8,25 +8,25 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
-    display: grid;
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(2, 200px);
-    gap: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
   }
 
   .color-a {
     display: flex;
     align-items: center;
     justify-content: center;
+    block-size: 400px;
+    aspect-ratio: 1;
     padding: 1rem;
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: sans-serif;
+  }
+
+  .controls > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-block-end: 1px solid #eee;
+    padding: 1rem;
   }
 }

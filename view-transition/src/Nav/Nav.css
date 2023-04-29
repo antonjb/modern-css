@@ -2,7 +2,22 @@ nav {
   display: grid;
   grid-template-columns: [full-start] 1fr [main-start] 120ch [main-end] 1fr [full-end];
   grid-column: full;
-  background-color: purple;
+  padding: 1rem;
+  background-color: var(--brand-purple);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.logo img {
+  inline-size: 40px;
+  block-size: 40px;
+  object-fit: contain;
 }
 
 nav .inner {

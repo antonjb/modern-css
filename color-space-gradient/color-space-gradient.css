@@ -2,18 +2,27 @@
 
 @layer demo {
   .srgb {
-    background: linear-gradient(to right, #ff0000 0%, #0000ff 100%);
+    background: linear-gradient(
+      to right,
+      var(--brand-purple),
+      var(--brand-yellow)
+    );
   }
 
   .lch {
-    background: linear-gradient(in lch to right, #ff0000, #0000ff);
+    background: linear-gradient(
+      in lch to right,
+      var(--brand-purple),
+      var(--brand-yellow)
+    );
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .gradient {

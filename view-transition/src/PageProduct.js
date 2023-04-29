@@ -1,15 +1,13 @@
 export function PageProduct() {
   return (
-    <div>
-      <img
-        src="https://images.unsplash.com/photo-1527904324834-3bda86da6771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Nzk0ODgzOTA&ixlib=rb-4.0.3&q=80&w=400"
-        alt=""
-        className="product-image"
-      />
-      <h1>Product 1</h1>
-      <div>
+    <div className="product-container">
+      <div className="product-image">
+        <img src="/media/doughnut box 6.png" alt="" width="368" height="377" />
+      </div>
+      <h1>Sprinkle Pack 6</h1>
+      <div className="product-description">
         <p>
-          Introducing our delectable tray of 12 assorted doughnuts, a perfect
+          Introducing our delectable tray of 6 assorted doughnuts, a perfect
           treat to satisfy your sweet tooth and indulge in a delightful
           assortment of flavors. Each doughnut is crafted with the utmost care
           and precision, using high-quality ingredients and a unique blend of
@@ -25,7 +23,7 @@ export function PageProduct() {
           fruit twist and the decadent triple chocolate surprise. Each doughnut
           is meticulously hand-decorated and garnished, making them not only
           delicious but visually stunning as well. With this incredible
-          assortment of flavors and designs, our tray of 12 doughnuts is the
+          assortment of flavors and designs, our tray of 6 doughnuts is the
           ultimate indulgence for any occasion, from casual gatherings to
           elegant celebrations. Treat yourself and your loved ones to the
           scrumptious world of gourmet doughnuts today!

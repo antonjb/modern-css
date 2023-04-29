@@ -11,19 +11,18 @@
     grid-template-columns: subgrid;
   }
 
-  div {
+  .card {
     grid-column: container;
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
     display: grid;
     grid-column: full-width;
+  }
+
+  .card img {
+    margin-block-end: 1rem;
   }
 }

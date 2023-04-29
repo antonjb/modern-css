@@ -5,6 +5,10 @@
     transform: scale(1.8) translateY(-1rem);
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 10;
+
+    & img {
+      transform: translateY(-30%);
+    }
   }
 
   main:has(button:hover) button:has(+ button:hover),
@@ -14,17 +18,18 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
     display: flex;
     gap: 1rem;
   }
 
   .button {
+    transition: transform 0.3s;
+  }
+
+  .button img {
+    inline-size: 100px;
+    block-size: auto;
     transition: transform 0.3s;
   }
 }

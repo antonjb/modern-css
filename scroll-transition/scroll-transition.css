@@ -1,7 +1,7 @@
 @layer reset, theme, setup, demo;
 
 @layer demo {
-  .square {
+  img {
     animation-name: spinny;
     animation-duration: 1s;
     animation-direction: alternate;
@@ -10,17 +10,12 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
     position: relative;
     block-size: 400px;
     inline-size: 400px;
     overflow: scroll;
-    outline: 1px solid orangered;
+    outline: 1px solid var(--brand-purple);
   }
 
   main::after {
@@ -30,12 +25,9 @@
     inline-size: 40px;
   }
 
-  .square {
+  img {
     position: sticky;
-    inline-size: 80px;
-    block-size: 80px;
-    background-color: orangered;
-    inset: 50%;
+    inset: 10% 50%;
   }
 
   @keyframes spinny {
@@ -43,7 +35,7 @@
       transform: rotate(0deg);
     }
     to {
-      transform: rotate(360deg);
+      transform: rotate(720deg);
     }
   }
 }

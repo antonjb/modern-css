@@ -5,18 +5,12 @@
     margin-trim: var(--margin-trim, none);
   }
 
-  .item {
+  .button {
     margin: 1rem;
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-    block-size: 100vh;
-  }
-
   main {
     display: flex;
     flex-direction: column;
@@ -28,19 +22,22 @@
   .container {
     display: flex;
     flex-direction: column;
-    border: 4px solid orangered;
-  }
-
-  .item {
-    padding: 1rem;
-    background-color: rebeccapurple;
-    border: 1px solid black;
-    color: #fff;
-    text-align: center;
-    flex: 1;
+    border: 2px solid var(--brand-purple);
   }
 
   .inline .container {
     flex-direction: row;
+  }
+
+  .inline .button {
+    flex: 1;
+  }
+
+  .controls {
+    display: flex;
+    margin-block-start: 1rem;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
   }
 }

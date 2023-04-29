@@ -8,6 +8,7 @@
   html,
   body {
     block-size: 100%;
+    font-family: sans-serif;
   }
 
   h1,
@@ -21,17 +22,56 @@
 }
 
 @layer theme {
+  :root {
+    --brand-purple: rgb(149 5 205);
+    --brand-blue: rgb(67 0 179);
+    --brand-pink: rgb(237 0 143);
+    --brand-yellow: rgb(255 242 47);
+    --brand-dark: rgb(0 0 0);
+    --brand-light: rgb(255 255 255);
+    --gradient-purple-pink: linear-gradient(
+      38deg,
+      var(--brand-purple) 0%,
+      var(--brand-pink) 100%
+    );
+    --gradient-purple-pink-shorter: linear-gradient(
+      38deg in hsl shorter hue,
+      var(--brand-purple) 0%,
+      var(--brand-pink) 100%
+    );
+    --gradient-yellow-pink-shorter: linear-gradient(
+      38deg in hsl shorter hue,
+      var(--brand-yellow),
+      var(--brand-pink)
+    );
+  }
+
+  body {
+    background: var(--body-background, #fff);
+    color: var(--body-color, var(--brand-dark));
+  }
+
   .card {
     padding: 1rem;
-    border: 1px solid pink;
+    border: 1px solid var(--card-primary-color, var(--brand-purple));
     border-radius: 1rem;
+  }
+
+  .card :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--card-header-color, rgba(35, 33, 21, 1));
   }
 
   .card img {
     inline-size: 100%;
     height: auto;
     aspect-ratio: 16/9;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: var(--card-primary-color, var(--brand-pink));
+  }
+
+  .card-body {
+    color: var(--card-body-color, rgb(35 33 21 / 0.65));
+    line-height: 1.4;
   }
 
   .card-footer {
@@ -47,20 +87,30 @@
     background-color: purple;
   }
 
+  .grid-container {
+    display: grid;
+    place-items: center;
+  }
+
   .button {
     display: flex;
     justify-content: center;
     padding: 0.5rem 1rem;
-    background-color: purple;
+    background: var(--button-background, var(--gradient-purple-pink));
     border-radius: 4px;
     color: #fff;
     border: none;
     font-size: 2rem;
     cursor: pointer;
+    align-items: center;
   }
 
   .button.secondary {
-    background-color: #eee;
+    background: #eee;
     color: black;
+  }
+
+  .noto {
+    font-family: "Noto Emoji", sans-serif;
   }
 }

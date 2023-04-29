@@ -8,14 +8,10 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
     display: grid;
     gap: 1rem;
+    justify-items: center;
   }
 
   .button {
@@ -23,8 +19,20 @@
     padding: 0;
   }
 
+  select {
+    font-size: 3rem;
+  }
+
   .highlighter {
-    background-color: blue;
+    background-color: var(--brand-yellow);
     padding: 1rem;
+    border: 4px solid var(--brand-dark);
+  }
+
+  a {
+    font-size: 6rem;
+    color: var(--brand-light);
+    background-color: var(--brand-pink);
+    text-decoration: none;
   }
 }

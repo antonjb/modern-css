@@ -57,13 +57,11 @@
     inline-size: 100%;
     block-size: 100%;
     min-block-size: 0;
-    outline: 1px solid orangered;
   }
 
   aside {
     grid-column: sidebar;
     inline-size: 100%;
-    outline: 1px solid purple;
   }
 
   .containment {

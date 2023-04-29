@@ -2,36 +2,47 @@
 
 @layer demo {
   .color-b {
-    background-color: hsl(from var(--color1) h s l);
+    background-color: hsl(from var(--color) h s l);
   }
 
   .color-c {
-    background-color: hsl(from var(--color1) h s l / 0.5);
+    background-color: hsl(from var(--color) h s l / 0.5);
   }
 
   .color-d {
-    background-color: hsl(from var(--color1) calc(h * 10) s l / 0.5);
+    background-color: hsl(from var(--color) calc(h * 10) s l / 0.5);
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
+  .grid-layout {
+    --color: var(--brand-purple);
 
-  main {
     display: grid;
     grid-template-columns: repeat(2, 200px);
     grid-template-rows: repeat(2, 200px);
     gap: 1rem;
+    font-size: 1.5rem;
   }
 
   [class^="color"] {
-    --color1: #8000a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
   }
 
   .color-a {
-    background-color: var(--color1);
+    background-color: var(--color);
+  }
+
+  .controls > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-block-end: 1px solid #eee;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
   }
 }

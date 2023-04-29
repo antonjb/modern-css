@@ -8,13 +8,13 @@
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
   }
 
   main {
+    grid-column: 2;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
   }
 }

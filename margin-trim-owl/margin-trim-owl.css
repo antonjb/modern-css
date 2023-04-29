@@ -11,23 +11,15 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-    block-size: 100vh;
-  }
-
   .container {
+    display: flex;
+    flex-direction: column;
     inline-size: 40%;
     max-inline-size: 400px;
-    border: 4px solid orangered;
+    border: 2px solid var(--brand-purple);
   }
 
-  .container > div {
-    padding: 1rem;
-    background-color: rebeccapurple;
-    border: 1px solid black;
-    color: #fff;
-    text-align: center;
+  .button {
+    flex: 1;
   }
 }

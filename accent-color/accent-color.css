@@ -2,18 +2,16 @@
 
 @layer demo {
   body {
-    accent-color: pink;
+    accent-color: var(--brand-purple);
   }
 
   .dark {
-    accent-color: black;
+    accent-color: var(--brand-dark);
   }
 }
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
     block-size: 100vh;
   }
 

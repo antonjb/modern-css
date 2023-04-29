@@ -12,8 +12,7 @@
   }
 
   .card:has(img) h2 {
-    color: red;
-    background-color: rgba(102, 51, 153, 0.5);
+    background: var(--brand-yellow);
     align-self: end;
     padding: 1rem;
   }
@@ -24,24 +23,28 @@
   }
 
   .card:has(img):has(.card-body) p {
-    outline: 4px solid red;
+    font-size: 1.4rem;
   }
 }
 
 @layer setup {
   body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     place-items: center;
     gap: 2rem;
   }
 
-  .card-footer {
-    display: flex;
-    gap: 1rem;
+  .card:first-child {
+    grid-column: 2;
   }
 
-  .card-footer > * {
-    flex: 1;
+  .card:last-child {
+    grid-column: 3;
+  }
+
+  .button svg {
+    width: 2rem;
+    height: 2rem;
   }
 }

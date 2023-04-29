@@ -11,7 +11,16 @@ export function Nav({ changePage }) {
               changePage(1);
             }}
           >
-            🍩 Doughnut Shop
+            <span className="logo">
+              <img
+                src="/media/doughnut_bite.png"
+                width="341"
+                height="317"
+                alt=""
+                className="logo"
+              />
+              Doughnut Shop
+            </span>
           </button>
         </h1>
         <ul>

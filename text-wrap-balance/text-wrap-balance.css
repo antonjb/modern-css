@@ -7,11 +7,6 @@
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   main {
     max-inline-size: 80vw;
     display: flex;

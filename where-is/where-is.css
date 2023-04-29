@@ -1,32 +1,30 @@
-.is-button,
-.where-button {
-  padding: 10px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  .where-button:where(:hover) {
+    outline-color: var(--brand-dark);
+  }
+
+  .is-button:is(:hover) {
+    outline-color: var(--brand-yellow);
+  }
+
+  :is(.also-specific, button.is-button:hover) {
+    outline-color: var(--brand-pink);
+  }
 }
 
-.where-button:where(:hover) {
-  background-color: red;
-}
+@layer setup {
+  main {
+    display: flex;
+    gap: 1rem;
+  }
 
-.where-button {
-  background-color: blue;
-}
+  .where-button {
+    outline: 4px solid var(--brand-blue);
+  }
 
-.is-button:is(:hover) {
-  background-color: purple;
-}
-
-.is-button {
-  background-color: blue;
-}
-
-:is(.also-specific, button.is-button:hover) {
-  background-color: pink;
-}
-
-.is-button.specific {
-  background-color: green;
+  .is-button {
+    outline: 4px solid var(--brand-blue);
+  }
 }

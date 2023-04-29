@@ -12,11 +12,11 @@
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   main {
+    grid-column: 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;

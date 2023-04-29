@@ -10,14 +10,12 @@
     display: grid;
     grid-row: 1 / -1;
     grid-template-rows: subgrid;
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
 @layer setup {
   body {
-    display: grid;
-    place-items: center;
     block-size: 100vh;
   }
 
@@ -26,5 +24,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0 2rem;
+  }
+
+  img {
+    margin-block-end: 1rem;
   }
 }

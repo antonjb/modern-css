@@ -3,26 +3,26 @@
 @layer demo {
   .card:not(:has(img)) h2 {
     padding: 2rem;
-    color: red;
-    font-size: 2.4rem;
+    color: var(--brand-purple);
+    font-size: 4rem;
     border-inline-start: 10px solid currentcolor;
+    background: var(--gradient-purple-pink-shorter);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
 @layer setup {
   body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     gap: 2rem;
   }
 
-  .card-footer {
-    display: flex;
-    gap: 1rem;
+  .card:first-child {
+    grid-column: 2;
   }
 
-  .card-footer > * {
-    flex: 1;
+  .card:last-child {
+    grid-column: 3;
   }
 }

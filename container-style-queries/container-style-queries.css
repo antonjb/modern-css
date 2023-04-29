@@ -7,7 +7,20 @@
 
   @container style(--promo: 1) {
     .card {
-      background-color: purple;
+      background: var(--gradient-purple-pink-shorter);
+    }
+
+    .card :where(h1, h2, h3, h4, h5, h6, p) {
+      color: #fff;
+    }
+
+    .card img {
+      background-color: transparent;
+    }
+
+    .card .button {
+      background: var(--brand-yellow);
+      color: var(--brand-dark);
     }
   }
 }
@@ -35,13 +48,11 @@
     inline-size: 100%;
     block-size: 100%;
     min-block-size: 0;
-    outline: 1px solid orangered;
   }
 
   aside {
     grid-column: sidebar;
     inline-size: 100%;
-    outline: 1px solid purple;
   }
 
   .containment {

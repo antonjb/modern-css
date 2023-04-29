@@ -6,12 +6,25 @@
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="color-contrast.css" />
   </head>
-  <body>
+  <body class="grid-container">
     <main>
       <div class="color-a">CSS is awesome!</div>
-      <input id="base" type="color" value="#ff00ff" />
-      <input id="choice-a" type="color" value="#000000" />
-      <input id="choice-b" type="color" value="#ffffff" />
+      <div class="controls">
+        <div>
+          <label for="base">Base Color</label>
+          <input id="base" type="color" value="#9505cd" />
+        </div>
+
+        <div>
+          <label for="choice-a">Color A</label>
+          <input id="choice-a" type="color" value="#000000" />
+        </div>
+
+        <div>
+          <label for="choice-b">Color B</label>
+          <input id="choice-b" type="color" value="#ffffff" />
+        </div>
+      </div>
     </main>
 
     <script>
@@ -22,15 +35,13 @@
 
       function updateColors() {
         $color.style.setProperty("--color", $input.value);
+        $color.style.setProperty("--color-a", $inputa.value);
+        $color.style.setProperty("--color-b", $inputb.value);
       }
 
       $input.addEventListener("input", updateColors);
-      $inputa.addEventListener("input", () => {
-        $color.style.setProperty("--color-a", $inputa.value);
-      });
-      $inputb.addEventListener("input", () => {
-        $color.style.setProperty("--color-b", $inputb.value);
-      });
+      $inputa.addEventListener("input", updateColors);
+      $inputb.addEventListener("input", updateColors);
 
       updateColors();
     </script>

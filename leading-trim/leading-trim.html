@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="leading-trim.css" />
   </head>
-  <body>
+  <body class="grid-container">
     <main>
-      <div>
-        <div class="highlighter">
-          <a href="#" class="button">Leading trim wow!</a>
-        </div>
+      <div class="highlighter">
+        <a href="#">Leading trim wow!</a>
+      </div>
 
+      <div>
         <select id="leading-trim">
           <option value="normal">normal</option>
           <option value="start">start</option>
@@ -35,7 +35,7 @@
     <script>
       const $leadingTrim = document.getElementById("leading-trim");
       const $textEdge = document.getElementById("text-edge");
-      const $target = document.querySelector(".button");
+      const $target = document.querySelector("a");
 
       $leadingTrim.addEventListener("change", () => {
         document.body.style.setProperty("--leading-trim", $leadingTrim.value);
@@ -48,7 +48,7 @@
       });
 
       function forceRepaint() {
-        // need to force Webkit to repaint otherwise we don't see a change
+        // need to force a repaint otherwise we don't see a change
         $target.style.transform = `translateZ(0)`;
 
         setTimeout(() => {

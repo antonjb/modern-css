@@ -6,20 +6,39 @@
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="color-mix.css" />
   </head>
-  <body>
+  <body class="grid-container">
     <main>
-      <div class="color-a"></div>
-      <div class="color-mix"></div>
-      <div class="color-b"></div>
+      <div>
+        <div class="color-a"></div>
+        <label for="color-a">Colour A</label>
+        <input id="color-a" type="color" value="#9505cd" />
+      </div>
+      <div>
+        <div class="color-mix"></div>
+        Mixed
+      </div>
+      <div>
+        <div class="color-b"></div>
+        <label for="color-b">Colour B</label>
+        <input id="color-b" type="color" value="#fff22f" />
+      </div>
       <div class="controls">
         <input type="range" step="1" max="100" min="0" />
       </div>
     </main>
 
     <script>
-      const $input = document.querySelector("input");
+      const $inputa = document.querySelector("#color-a");
+      const $inputb = document.querySelector("#color-b");
+      const $inputRange = document.querySelector("input[type=range]");
 
-      $input.addEventListener("input", update);
+      $inputa.addEventListener("input", () => {
+        document.documentElement.style.setProperty("--color-a", $inputa.value);
+      });
+      $inputb.addEventListener("input", () => {
+        document.documentElement.style.setProperty("--color-b", $inputb.value);
+      });
+      $inputRange.addEventListener("input", update);
 
       function update(evt) {
         const value = evt.target.value;

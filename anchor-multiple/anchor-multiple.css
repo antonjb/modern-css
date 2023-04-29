@@ -10,48 +10,53 @@
   }
 
   .shape {
-    top: min(anchor(--start-anchor center), anchor(--end-anchor center));
-    left: min(anchor(--start-anchor center), anchor(--end-anchor center));
-    right: min(anchor(--start-anchor center), anchor(--end-anchor center));
-    bottom: min(anchor(--start-anchor center), anchor(--end-anchor center));
+    inset-block-start: min(
+      anchor(--start-anchor center),
+      anchor(--end-anchor center)
+    );
+    inset-block-end: min(
+      anchor(--start-anchor center),
+      anchor(--end-anchor center)
+    );
+    inset-inline-start: min(
+      anchor(--start-anchor center),
+      anchor(--end-anchor center)
+    );
+    inset-inline-end: min(
+      anchor(--start-anchor center),
+      anchor(--end-anchor center)
+    );
   }
 }
 
 @layer setup {
-  body {
-    display: grid;
-    place-items: center;
-  }
-
   .container {
     position: relative;
-    outline: 1px solid pink;
     inline-size: 400px;
     block-size: 400px;
-    backface-visibility: hidden;
   }
 
   .shape {
     position: absolute;
-    background-color: purple;
+    background: var(--gradient-purple-pink);
   }
 
   .handle {
     position: relative;
     inline-size: 40px;
     block-size: 40px;
+    background-color: var(--brand-yellow);
+    border: 4px solid var(--brand-dark);
     border-radius: 50%;
-  }
 
-  .start {
-    background-color: green;
-    top: 10%;
-    left: 10%;
-  }
+    &.start {
+      inset-block-start: 10%;
+      inset-inline-start: 10%;
+    }
 
-  .end {
-    background-color: red;
-    top: 80%;
-    left: 80%;
+    &.end {
+      inset-block-start: 80%;
+      inset-inline-start: 80%;
+    }
   }
 }

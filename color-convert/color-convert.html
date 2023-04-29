@@ -2,16 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Color convert</title>
+    <title>Relative Colour Syntax</title>
     <link rel="stylesheet" href="../base.css" />
     <link rel="stylesheet" href="color-convert.css" />
   </head>
-  <body>
+  <body class="grid-container">
     <main>
-      <div class="color-a"></div>
-      <div class="color-b"></div>
-      <div class="color-c"></div>
-      <div class="color-d"></div>
+      <div class="grid-layout">
+        <div class="color-a">Base Colour</div>
+        <div class="color-b">HSL</div>
+        <div class="color-c">HSL + Alpha</div>
+        <div class="color-d">HSL modified</div>
+      </div>
+      <div class="controls">
+        <div>
+          <label for="base">Base Color</label>
+          <input id="base" type="color" value="#9505cd" />
+        </div>
+      </div>
     </main>
+
+    <script>
+      const $container = document.querySelector(".grid-layout");
+      const $input = document.getElementById("base");
+
+      function updateColors() {
+        $container.style.setProperty("--color", $input.value);
+      }
+
+      $input.addEventListener("input", updateColors);
+
+      updateColors();
+    </script>
   </body>
 </html>

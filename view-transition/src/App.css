@@ -19,7 +19,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .breadcrumb {
@@ -30,7 +30,6 @@ button {
   view-transition-name: breadcrumb;
   grid-column: main;
   gap: 1rem;
-  /* inline-size: fit-content; */
   contain: layout;
 }
 
@@ -46,16 +45,41 @@ button {
 }
 
 .doughnutdothis {
-  position: fixed;
-  inline-size: 50%;
-  block-size: 50%;
-  top: 50%;
+  width: 100vw;
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: purple;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  top: 0;
+  bottom: 0;
+
+  background-color: var(--brand-purple);
   contain: paint;
   z-index: 100;
   view-transition-name: doughnutdothis;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(3);
+}
+
+.product-container {
+  inline-size: 40vw;
+  margin: auto;
+}
+
+.product-image {
+  display: flex;
+  justify-content: center;
+  background-color: var(--brand-pink);
+  margin-block-end: 1rem;
+}
+
+.product-description {
+  color: var(--brand-dark);
+  font-size: 1.4rem;
 }
 
 @keyframes slide-from-right {
@@ -144,5 +168,5 @@ button {
 }
 
 ::view-transition-image-pair(doughnutdothis) {
-  animation: 100ms ease-in-out both spinneroony;
+  animation: 100ms ease-in-out both spinneroony reverse;
 }

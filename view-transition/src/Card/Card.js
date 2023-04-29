@@ -3,12 +3,17 @@ export function Card({ imageUrl, title, children, onClick }) {
     <div class="card">
       <div class="card-header">
         <img className="card-image" src={imageUrl} alt="" />
-        <h2>{title}</h2>
       </div>
-      <div class="card-body">{children}</div>
+      <div class="card-body">
+        <h2>{title}</h2>
+        {children}
+      </div>
       <div class="card-footer">
+        <button className="button secondary" onClick={onClick}>
+          More info
+        </button>
         <button className="button" onClick={onClick}>
-          Testing
+          Buy now
         </button>
       </div>
     </div>
