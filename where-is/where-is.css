@@ -2,15 +2,19 @@
 
 @layer demo {
   .where-button:where(:hover) {
-    outline-color: var(--brand-dark);
+    background-color: var(--brand-pink);
+  }
+
+  .where-button {
+    background-color: var(--brand-purple);
   }
 
   .is-button:is(:hover) {
-    outline-color: var(--brand-yellow);
+    background-color: var(--brand-pink);
   }
 
-  :is(.also-specific, button.is-button:hover) {
-    outline-color: var(--brand-pink);
+  .is-button {
+    background-color: var(--brand-purple);
   }
 }
 
@@ -20,11 +24,7 @@
     gap: 1rem;
   }
 
-  .where-button {
-    outline: 4px solid var(--brand-blue);
-  }
-
-  .is-button {
-    outline: 4px solid var(--brand-blue);
+  :where(.where-button, .is-button) {
+    color: var(--brand-light);
   }
 }
