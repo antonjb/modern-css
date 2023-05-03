@@ -18,7 +18,7 @@
     }
 
     &.special {
-      background-color: purple;
+      background-color: var(--brand-purple);
     }
   }
 }
