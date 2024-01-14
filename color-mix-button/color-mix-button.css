@@ -1,0 +1,47 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  :root {
+    --button-tint: var(--brand-pink);
+  }
+
+  .button {
+    background: var(--button-color);
+  }
+
+  .button.primary {
+    --button-color: var(--brand-purple);
+  }
+
+  .button.hover,
+  .button:hover {
+    background: color-mix(in srgb, var(--button-color), var(--button-tint) 25%);
+  }
+}
+
+@layer setup {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 2rem;
+  }
+
+  .button:hover {
+    transition: background 0.5s ease-in;
+  }
+
+  .button.secondary {
+    --button-color: #eee;
+  }
+
+  .button.user {
+    --button-color: var(--brand-yellow);
+    color: var(--brand-dark);
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
