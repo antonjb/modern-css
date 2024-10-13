@@ -6,21 +6,11 @@
   }
 
   .tooltip {
-    anchor-default: --tooltip-anchor;
-    position-fallback: --tooltop-position;
-    anchor-scroll: --tooltip-anchor;
-    left: anchor(auto);
-  }
+    position-anchor: --tooltip-anchor;
+    position-try-fallbacks: flip-block;
 
-  @position-fallback --tooltop-position {
-    @try {
-      bottom: anchor(top);
-      left: anchor(center);
-    }
-    @try {
-      top: anchor(bottom);
-      left: anchor(right);
-    }
+    inset-block-end: calc(anchor(top) + 1rem);
+    inset-inline-start: anchor(center);
   }
 }
 
