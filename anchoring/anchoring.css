@@ -6,8 +6,9 @@
   }
 
   .tooltip {
-    inset-block-end: calc(anchor(--tooltip-anchor top) + 1rem);
-    inset-inline-start: anchor(--tooltip-anchor center);
+    position-anchor: --tooltip-anchor;
+    inset-block-end: anchor(top);
+    inset-inline-start: anchor(center);
   }
 }
 
