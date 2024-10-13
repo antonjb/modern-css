@@ -1,0 +1,34 @@
+@layer reset, theme, setup, vendor, custom;
+
+@layer vendor {
+  ul li {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+@layer custom {
+  li {
+    color: var(--brand-purple);
+    text-decoration: none;
+  }
+}
+
+@layer setup {
+  body {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    height: unset;
+  }
+
+  main {
+    inline-size: 40vw;
+    margin-inline: auto;
+    padding-block: 2rem;
+  }
+
+  img {
+    margin-block: 1rem;
+  }
+}
