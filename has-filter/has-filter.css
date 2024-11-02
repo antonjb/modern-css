@@ -1,0 +1,55 @@
+@layer reset, theme, setup, demo;
+
+@layer demo {
+  body:has(input[value="box"]:checked) .card:not([data-type="box"]),
+  body:has(input[value="single"]:checked) .card:not([data-type="single"]) {
+    opacity: 0.2;
+    scale: 0.8;
+  }
+}
+
+@layer setup {
+  body {
+    grid-template-columns: 10ch 1fr 10ch;
+    grid-auto-rows: min-content;
+    gap: 1rem;
+  }
+
+  main {
+    grid-column: 2;
+    inline-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    transition-property: opacity scale;
+    transition-duration: 0.5s;
+  }
+
+  .card-footer {
+    margin-block-start: auto;
+  }
+
+  .filters {
+    grid-column: 2;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  label {
+    padding: 1rem;
+    border: 1px solid var(--card-primary-color, var(--brand-purple));
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: purple;
+      color: #fff;
+    }
+  }
+}
